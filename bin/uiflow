@@ -22,15 +22,15 @@ op.addOption("h","help","Display this message")
 op.addOption("i","input","Set target 'FILE' or 'DIR' like ./sample/xx.txt")
     .argument("FILE|DIR")
     .action(function(d){
-        INPUT_FILE = d;    
+        INPUT_FILE = d;
     });
 op.addOption("o","out","Write output to 'FILE'")
     .argument("FILE")
     .action(function(d){
-        OUTPUT_FILE = d;    
+        OUTPUT_FILE = d;
     });
 op.addOption("f","format","Set output format")
-    .argument("dot=default|json|svg|png")
+    .argument("dot=default|json|svg")
     .action(function(d){
         FORMAT = d;
     });
@@ -49,6 +49,3 @@ var output = OUTPUT_FILE ? fs.createWriteStream(OUTPUT_FILE,{
 }) : process.stdout;
 
 uiflow.build(INPUT_FILE,FORMAT).pipe(output);
-
-
-

@@ -2,10 +2,10 @@ var fs = require("fs");
 var stream = require("stream");
 var parser = require("./app/parser");
 var dot = require("./app/dotwriter");
-var spawnStream = require("spawn-stream");
 var stringStream = require("string-to-stream");
 var streamFromPromise = require("stream-from-promise");
 var through2 = require("through2");
+var Viz = require("viz.js");
 //var reduce = require("through2-reduce");
 /*
  plugin : function(fileName,format) -> stream
@@ -97,13 +97,15 @@ var jsonize = function() {
     });
 };
 
-var graphviz = function(format) {
+var graphviz = function (format) {
     return function() {
-        //return spawnStream("node", ["./hoge.js", format]);
-        return spawnStream(uiflow.DOT_PATH, ["-T", format]);
+        return through2.obj(function (chunk, enc, callback) {
+            var output = Viz(chunk, { format :format });
+            this.push(output);
+            callback();
+        });
     };
 };
-
 
 var FORMAT_TO_PIPELINE = uiflow.FORMAT_TO_PIPELINE = {
     dot: [parse, compile],
@@ -114,7 +116,6 @@ var FORMAT_TO_PIPELINE = uiflow.FORMAT_TO_PIPELINE = {
     complete: [parse, complete],
     sketch: function() {},
 };
-uiflow.DOT_PATH = "dot";
 uiflow.parser = parser;
 uiflow.dotwriter = dot;
 uiflow.compile = function() {
