@@ -108,7 +108,7 @@ var FORMAT_TO_PIPELINE = uiflow.FORMAT_TO_PIPELINE = {
 uiflow.DOT_PATH = "dot";
 uiflow.parser = parser;
 uiflow.dotwriter = dot;
-uiflow.compile = function() {
+uiflow.compile = function(d) {
     return dot.compile(parser.parse(d));
 };
 
