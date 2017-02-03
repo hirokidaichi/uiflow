@@ -2,6 +2,7 @@ var SECTION = /\[([^#\]]*)(#+)?\]/;
 var END_OF_SEES = /^-+/;
 var END_OF_ACTION = /=+(?:{([^}]+)})?=+>\s*([^:\]]*)/;
 var WHITE_LINE = /^\s*$/;
+var COMMENT_LINE = /^\s*#/;
 
 var lexer = module.exports.lexer = function(text) {
     var state = {};
@@ -32,6 +33,9 @@ var parseByLine = function(line, num) {
     if (WHITE_LINE.test(line)) {
         return ["whiteline", num];
     }
+    if (COMMENT_LINE.test(line)) {
+        return ["commentline", num];
+    }
     return ["text", line, num];
 };
 
@@ -44,6 +48,9 @@ var parseTags = function(listOfNode, fileName) {
     var errorMessage = parseError(fileName);
     listOfNode.forEach(function(node) {
         var tag = node[0];
+        if (tag == "commentline") {
+	    ;
+        }
         if (tag == "whiteline") {
             return;
         }
