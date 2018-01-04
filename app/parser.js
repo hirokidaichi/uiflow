@@ -2,6 +2,7 @@ var SECTION = /\[([^#\]]*)(#+)?\]/;
 var END_OF_SEES = /^-+/;
 var END_OF_ACTION = /=+(?:{([^}]+)})?=+>\s*([^:\]]*)/;
 var WHITE_LINE = /^\s*$/;
+var COMMENT_MARKER = "//";
 
 var lexer = module.exports.lexer = function(text) {
     var state = {};
@@ -19,6 +20,10 @@ var parseError = function(fileName) {
 };
 
 var parseByLine = function(line, num) {
+    var commentIndex = line.indexOf(COMMENT_MARKER);
+    if (commentIndex >= 0) {
+        line = line.substring(0, commentIndex);
+    }
     if (SECTION.test(line)) {
         var rank = RegExp.$2.length;
         return ["section", RegExp.$1, rank, num];
