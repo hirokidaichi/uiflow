@@ -1,5 +1,5 @@
 var SECTION = /\[([^#\]]*)(#+)?\]/;
-var END_OF_SEES = /^-+/;
+var END_OF_SEES = /^-+$/;
 var END_OF_ACTION = /=+(?:{([^}]+)})?=+>\s*([^:\]]*)/;
 var WHITE_LINE = /^\s*$/;
 
