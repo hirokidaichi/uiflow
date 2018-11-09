@@ -71,7 +71,7 @@ var edgeGlobal = function() {
     return blanket(1, "edge", dot.edge);
 };
 var section = function(port, text) {
-    return "<" + port + ">" + " " + (text.map ? text.map(escapeText) : escapeText(text)) + "\\l ";
+    return "<" + port + ">" + " " + text + "\\l ";
 };
 
 var runeWidth = function(str) {
@@ -104,10 +104,10 @@ var treeToDotDef = function(tree) {
         return blanket(1, nameOf(elm), {
             shape: "record",
             label: [
-                section("title", elm.name),
-                section("see", elm.see.join("\\l")),
+                section("title", escapeText(elm.name)),
+                section("see", elm.see.map(escapeText).join("\\l")),
                 noActions ? null : elm.actions.map(function(action, index) {
-                    return section("action" + index, action.text);
+                    return section("action" + index, action.text.map(escapeText));
                 }).join("|"),
             ].filter(function(r) {
                 return !!r;
