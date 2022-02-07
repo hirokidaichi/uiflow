@@ -94,7 +94,7 @@ var treeToDotDef = function(tree) {
                 section("title", elm.name),
                 section("see", elm.see.join("\\l")),
                 noActions ? null : elm.actions.map(function(action, index) {
-                    return section("action" + index, action.text);
+                    return section("action" + index, action.text.join("\\l"));
                 }).join("|"),
             ].filter(function(r) {
                 return !!r;
