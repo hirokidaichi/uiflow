@@ -38,32 +38,18 @@ Webサイトやスマホアプリなどのユーザーインタフェースを�
 結果
 ```
 
-## インストール方法
-
-グラフの生成には[Graphviz](http://www.graphviz.org/)を用います。brewなどを通じてinstallしておいてください。
-
-
-```
-brew install graphviz
-npm install -g uiflow
-```
 
 ## コマンドの使い方
 
 ### シンプルな使い方
 
 ```bash:
-uiflow -i myapp.txt -o myapp.png -f png  
+uiflow -i myapp.txt -o myapp.dot -f dot  
 ```
 
-myapp.txtをpng形式で、myapp.pngに変換する。
+myapp.txtをdot形式で、myapp.dotに変換する。
 
-### svgで出力
 
-```bash:
-uiflow -i myapp.txt -f svg
-```
-myapp.txtをsvg形式で、標準出力に表示する。
 
 ## uiflow形式の文法
 

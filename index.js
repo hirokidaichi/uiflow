@@ -2,7 +2,6 @@ var fs = require("fs");
 var stream = require("stream");
 var parser = require("./app/parser");
 var dot = require("./app/dotwriter");
-var graphviz = require("./app/graphviz");
 var stringStream = require("string-to-stream");
 var streamFromPromise = require("stream-from-promise");
 var through2 = require("through2");
@@ -10,7 +9,7 @@ var through2 = require("through2");
 /*
  plugin : function(fileName,format) -> stream
 
- png := slurp | parse | dot | graphviz(png)
+ png := slurp | parse | dot
 
 */
 var uiflow = module.exports = {};
@@ -100,9 +99,7 @@ var jsonize = function() {
 var FORMAT_TO_PIPELINE = uiflow.FORMAT_TO_PIPELINE = {
     dot: [parse, compile],
     meta: [parse, jsonize],
-    json: [parse, jsonize],
-    png: [parse, compile, graphviz("png")],
-    svg: [parse, compile, graphviz("svg")],
+    json: [parse, jsonize]
 };
 
 uiflow.DOT_PATH = "dot";
