@@ -5,13 +5,6 @@ var dot = require("./app/dotwriter");
 var stringStream = require("string-to-stream");
 var streamFromPromise = require("stream-from-promise");
 var through2 = require("through2");
-//var reduce = require("through2-reduce");
-/*
- plugin : function(fileName,format) -> stream
-
- png := slurp | parse | dot
-
-*/
 var uiflow = module.exports = {};
 
 var slurp = function(fileName) {
