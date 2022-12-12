@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var fs = require("fs");
-var uiflow = require("../index.js");
+var uiflow = require("../src");
 var OptionParser = require("option-parser");
 
 var op = new OptionParser();
@@ -22,12 +22,12 @@ op.addOption("h","help","Display this message")
 op.addOption("i","input","Set target 'FILE' or 'DIR' like ./sample/xx.txt")
     .argument("FILE|DIR")
     .action(function(d){
-        INPUT_FILE = d;    
+        INPUT_FILE = d;
     });
 op.addOption("o","out","Write output to 'FILE'")
     .argument("FILE")
     .action(function(d){
-        OUTPUT_FILE = d;    
+        OUTPUT_FILE = d;
     });
 op.addOption("f","format","Set output format")
     .argument("dot=default|json|svg|png")
