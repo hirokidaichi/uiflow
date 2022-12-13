@@ -1,11 +1,11 @@
 import { Action, Tag } from './interfaces'
 
-const SECTION = /\[([^#\]]*)(#+)?\]/
+const SECTION = /\[([^#\]]*)(#+)?]/
 const END_OF_SEES = /^-+$/
 const END_OF_ACTION = /=+(?:{([^}]+)})?=+>\s*([^:\]]*)/
 const WHITE_LINE = /^\s*$/
 
-interface ParseResult {
+interface LineParseResult {
   tag: Tag
   num: number
   rank?: number
@@ -15,6 +15,8 @@ interface ParseResult {
   title?: string
   text?: string
 }
+
+type ParseResult = LineParseResult[]
 
 type State = 'action' | 'see' | 'endaction'
 
@@ -40,7 +42,7 @@ export class ParseError extends Error {
   }
 }
 
-const lexer = (text: string): ParseResult[] => {
+const lexer = (text: string): ParseResult => {
   return text.split(/\n/).map(parseByLine)
 }
 const parseError = (fileName: string) => {
@@ -60,7 +62,7 @@ const parseError = (fileName: string) => {
   }
 }
 
-const parseByLine = (line: string, num: number): ParseResult => {
+const parseByLine = (line: string, num: number): LineParseResult => {
   const section = line.match(SECTION)
   if (section !== null) {
     const rank = section[2].length
@@ -103,7 +105,7 @@ const parseByLine = (line: string, num: number): ParseResult => {
   return { tag: 'text', num: num }
 }
 
-const parseTags = (listOfNode: ParseResult[], fileName: string): Tree => {
+const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
   const tree: Tree = {}
   let nId = 1
   let currentSection: string
