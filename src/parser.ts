@@ -1,4 +1,4 @@
-import { Action, AST, Node, Tag } from './interfaces'
+import { Action, Tag } from './interfaces'
 
 const SECTION = /\[([^#\]]*)(#+)?\]/
 const END_OF_SEES = /^-+$/
@@ -17,6 +17,7 @@ interface ParseResult {
 }
 
 type State = 'action' | 'see' | 'endaction'
+
 interface TreeNode {
   id: number
   name: string
