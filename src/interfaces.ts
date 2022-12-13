@@ -1,8 +1,24 @@
 export type AST = typeof Array<Node>
 
 interface Tags {
-    endOfSection: string
+    section: string
+    endOfSee: string
+    endOfAction: string
+    text: string
+    whiteLine: string
+}
+
+export type Tag = keyof Tags
+
+export interface Action {
+    text: [string]
+    direction: number | null
 }
 export interface Node {
-    tag: keyof Tags
+    id: number
+    name: string
+    rank: number
+    see: [string]
+    tag: Tag
+    actions: [Action]
 }

@@ -14,7 +14,9 @@ module.exports = {
         sourceType: 'module',
         project: ['./tsconfig.json']
     },
-    rules: {}
+    rules: {
+      semi: "error"
+    }
 
 
 }
