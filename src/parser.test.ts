@@ -1,10 +1,7 @@
 import { parse } from './parser'
+import fs from 'fs'
 test('parser', () => {
-  const result = parse(
-    `[hoge]
-  test
-  `,
-    'hoge.uif'
-  )
+  const md = fs.readFileSync('sample/01.txt', 'utf8')
+  const result = parse(md, 'hoge.uif')
   console.log(result)
 })
