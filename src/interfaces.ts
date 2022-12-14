@@ -2,10 +2,10 @@ export type AST = typeof Array<Node>
 
 interface Tags {
   section: string
-  endOfSee: string
-  endOfAction: string
+  endofsee: string
+  endofaction: string
   text: string
-  whiteLine: string
+  whiteline: string
 }
 
 export type Tag = keyof Tags

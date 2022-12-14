@@ -71,7 +71,7 @@ const parseByLine = (line: string, num: number): LineParseResult => {
   const endOfSees = line.match(END_OF_SEES)
   if (endOfSees !== null) {
     return {
-      tag: 'endOfSee',
+      tag: 'endofsee',
       num,
     }
   }
@@ -81,7 +81,7 @@ const parseByLine = (line: string, num: number): LineParseResult => {
     const actionText = endOfAction[2]
     const api = endOfAction[1]
     return {
-      tag: 'endOfAction',
+      tag: 'endofaction',
       actionText,
       api,
       num,
@@ -91,11 +91,11 @@ const parseByLine = (line: string, num: number): LineParseResult => {
   const whiteLine = line.match(WHITE_LINE)
   if (whiteLine !== null) {
     return {
-      tag: 'whiteLine',
+      tag: 'whiteline',
       num,
     }
   }
-  return { tag: 'text', num }
+  return { tag: 'text', text: line, num }
 }
 
 const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
@@ -108,7 +108,7 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
 
   listOfNode.forEach((node) => {
     const tag = node.tag
-    if (tag === 'whiteLine') {
+    if (tag === 'whiteline') {
       return
     }
     if (tag === 'section') {
@@ -139,7 +139,7 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
     }
 
     // endOfAction
-    if (tag === 'endOfAction') {
+    if (tag === 'endofaction') {
       if (!(currentSection in tree)) {
         errorMessage('Undefined section' + '\tL:', node.num)
       }
@@ -151,7 +151,7 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
     }
 
     // endOfSee
-    if (tag === 'endOfSee') {
+    if (tag === 'endofsee') {
       if (!(currentSection in tree)) {
         errorMessage(`Undefined section ${currentSection}]`, node.num)
       }
