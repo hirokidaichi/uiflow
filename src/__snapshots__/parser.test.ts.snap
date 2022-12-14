@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parser 1`] = `
+{
+  "はじめよう": {
+    "actions": [
+      {
+        "direction": "",
+        "edge": "はじめよう",
+        "text": [
+          "",
+        ],
+      },
+      {
+        "direction": "非ログインメイン画面",
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 3,
+    "lines": 13,
+    "name": "はじめよう",
+    "rank": 0,
+    "see": [
+      "ヒント情報",
+      "はじめるボタン",
+    ],
+    "state": "action",
+  },
+  "ランキング": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 7,
+    "lines": 48,
+    "name": "ランキング",
+    "rank": 0,
+    "see": [
+      "ランキング詳細",
+    ],
+    "state": "see",
+  },
+  "分野": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 6,
+    "lines": 45,
+    "name": "分野",
+    "rank": 0,
+    "see": [
+      "分野詳細",
+    ],
+    "state": "see",
+  },
+  "初回通知": {
+    "actions": [
+      {
+        "direction": "国選択",
+        "edge": null,
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "初回通知",
+    "rank": 0,
+    "see": [
+      "通知の確認ダイアログ",
+    ],
+    "state": "action",
+  },
+  "利用規約": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 5,
+    "lines": 42,
+    "name": "利用規約",
+    "rank": 0,
+    "see": [
+      "利用規約の表示",
+    ],
+    "state": "see",
+  },
+  "国選択": {
+    "actions": [
+      {
+        "direction": "はじめよう",
+        "edge": null,
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 6,
+    "name": "国選択",
+    "rank": 0,
+    "see": [
+      "リージョンの選択",
+      "デフォルトで日本",
+      "OKボタン",
+    ],
+    "state": "action",
+  },
+  "非ログインメイン画面": {
+    "actions": [
+      {
+        "direction": "",
+        "edge": "利用規約",
+        "text": [
+          "",
+        ],
+      },
+      {
+        "direction": "",
+        "edge": "分野",
+        "text": [
+          "",
+        ],
+      },
+      {
+        "direction": "",
+        "edge": "ログイン確認",
+        "text": [
+          "",
+        ],
+      },
+      {
+        "direction": "",
+        "edge": "ランキング",
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 4,
+    "lines": 21,
+    "name": "非ログインメイン画面",
+    "rank": 0,
+    "see": [
+      "ログインすると全ての機能を使えますアラート",
+      "フィード",
+      "通知アイコン",
+      "検索アイコン",
+      "ホーム",
+      "分野",
+      "Qボタン",
+      "ランキング",
+      "マイページ(N)",
+    ],
+    "state": "endaction",
+  },
+}
+`;
