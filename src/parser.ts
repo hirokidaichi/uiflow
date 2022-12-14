@@ -47,25 +47,18 @@ const lexer = (text: string): ParseResult => {
 }
 const parseError = (fileName: string) => {
   return (message: string, lineNumber: number) => {
-    const error = new ParseError(
-      [
-        fileName !== null || '(anon)',
-        ':',
-        lineNumber,
-        ': error:',
-        message,
-      ].join(''),
+    throw new ParseError(
+      [fileName ?? '(anon)', ':', lineNumber, ': error:', message].join(''),
       lineNumber,
       fileName
     )
-    throw error
   }
 }
 
 const parseByLine = (line: string, num: number): LineParseResult => {
   const section = line.match(SECTION)
   if (section !== null) {
-    const rank = section[2].length
+    const rank = section[2] !== undefined ? section[2].length : 0
     const title = section[1]
     return {
       tag: 'section',
@@ -102,14 +95,14 @@ const parseByLine = (line: string, num: number): LineParseResult => {
       num,
     }
   }
-  return { tag: 'text', num: num }
+  return { tag: 'text', num }
 }
 
 const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
   const tree: Tree = {}
   let nId = 1
   let currentSection: string
-  let lastAction: Action
+  let lastAction: Action = { text: [], direction: null }
   let actions: Action[]
   const errorMessage = parseError(fileName)
 
@@ -138,12 +131,26 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
           {
             text: [],
             direction: null,
+            edge: null,
           },
         ],
         state: 'see',
       }
     }
 
+    // endOfAction
+    if (tag === 'endOfAction') {
+      if (!(currentSection in tree)) {
+        errorMessage('Undefined section' + '\tL:', node.num)
+      }
+      actions = tree[currentSection].actions
+      actions[actions.length - 1].direction = node.title ?? ''
+      actions[actions.length - 1].edge = node.actionText ?? ''
+
+      tree[currentSection].state = 'endaction'
+    }
+
+    // endOfSee
     if (tag === 'endOfSee') {
       if (!(currentSection in tree)) {
         errorMessage(`Undefined section ${currentSection}]`, node.num)
@@ -155,7 +162,8 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
       tree[currentSection].state = 'action'
     }
 
-    if (tag === 'endOfAction') {
+    // text
+    if (tag === 'text') {
       if (!(currentSection in tree)) {
         errorMessage('Undefined section' + '\tL:', node.num)
       }
@@ -177,6 +185,7 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
       if (state === 'action') {
         actions = tree[currentSection].actions
         actions[actions.length - 1].text.push(node.actionText ?? '')
+        lastAction = actions[actions.length - 1]
       }
     }
   })

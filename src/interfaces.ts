@@ -13,6 +13,7 @@ export type Tag = keyof Tags
 export interface Action {
   text: string[]
   direction: string | null
+  edge?: string | null
 }
 export interface Node {
   id: number

@@ -1,4 +1,10 @@
 import { parse } from './parser'
 test('parser', () => {
-  parse(`[hoge]`, 'hoge.uif')
+  const result = parse(
+    `[hoge]
+  test
+  `,
+    'hoge.uif'
+  )
+  console.log(result)
 })
