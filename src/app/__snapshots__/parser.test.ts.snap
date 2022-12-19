@@ -2,6 +2,1227 @@
 
 exports[`parser 1`] = `
 {
+  "はじめよう": {
+    "actions": [
+      {
+        "direction": "はじめよう",
+        "edge": "",
+        "text": [
+          "ヒントをスワイプ",
+        ],
+      },
+      {
+        "direction": "非ログインメイン画面",
+        "text": [
+          "LINEQを始める",
+        ],
+      },
+    ],
+    "id": 3,
+    "lines": 13,
+    "name": "はじめよう",
+    "rank": 0,
+    "see": [
+      "ヒント情報",
+      "はじめるボタン",
+    ],
+    "state": "action",
+  },
+  "ランキング": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 7,
+    "lines": 48,
+    "name": "ランキング",
+    "rank": 0,
+    "see": [
+      "ランキング詳細",
+    ],
+    "state": "see",
+  },
+  "分野": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 6,
+    "lines": 45,
+    "name": "分野",
+    "rank": 0,
+    "see": [
+      "分野詳細",
+    ],
+    "state": "see",
+  },
+  "初回通知": {
+    "actions": [
+      {
+        "direction": "国選択",
+        "edge": null,
+        "text": [
+          "OK",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "初回通知",
+    "rank": 0,
+    "see": [
+      "通知の確認ダイアログ",
+    ],
+    "state": "action",
+  },
+  "利用規約": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 5,
+    "lines": 42,
+    "name": "利用規約",
+    "rank": 0,
+    "see": [
+      "利用規約の表示",
+    ],
+    "state": "see",
+  },
+  "国選択": {
+    "actions": [
+      {
+        "direction": "はじめよう",
+        "edge": null,
+        "text": [
+          "OK",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 6,
+    "name": "国選択",
+    "rank": 0,
+    "see": [
+      "リージョンの選択",
+      "デフォルトで日本",
+      "OKボタン",
+    ],
+    "state": "action",
+  },
+  "非ログインメイン画面": {
+    "actions": [
+      {
+        "direction": "利用規約",
+        "edge": "",
+        "text": [
+          "アラートをタップ",
+        ],
+      },
+      {
+        "direction": "分野",
+        "edge": "",
+        "text": [
+          "分野をタップ",
+        ],
+      },
+      {
+        "direction": "ログイン確認",
+        "edge": "",
+        "text": [
+          "Qボタンをタップ",
+        ],
+      },
+      {
+        "direction": "ランキング",
+        "edge": "",
+        "text": [
+          "ランキングをタップ",
+        ],
+      },
+    ],
+    "id": 4,
+    "lines": 21,
+    "name": "非ログインメイン画面",
+    "rank": 0,
+    "see": [
+      "ログインすると全ての機能を使えますアラート",
+      "フィード",
+      "通知アイコン",
+      "検索アイコン",
+      "ホーム",
+      "分野",
+      "Qボタン",
+      "ランキング",
+      "マイページ(N)",
+    ],
+    "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 2`] = `
+{
+  "テスト": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 4,
+    "lines": 17,
+    "name": "テスト",
+    "rank": 0,
+    "see": [],
+    "state": "see",
+  },
+  "ページ名": {
+    "actions": [
+      {
+        "direction": "ページ名2",
+        "edge": null,
+        "text": [
+          "行動要素1",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "ページ名",
+    "rank": 0,
+    "see": [
+      "表示要素1",
+    ],
+    "state": "action",
+  },
+  "ページ名2": {
+    "actions": [
+      {
+        "direction": "ページ名3",
+        "edge": null,
+        "text": [
+          "行動要素",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 6,
+    "name": "ページ名2",
+    "rank": 0,
+    "see": [
+      "表示要素",
+    ],
+    "state": "action",
+  },
+  "ページ名3": {
+    "actions": [
+      {
+        "direction": "テスト",
+        "edge": "アニメーションやAPI",
+        "text": [
+          "行動要素",
+        ],
+      },
+    ],
+    "id": 3,
+    "lines": 11,
+    "name": "ページ名3",
+    "rank": 0,
+    "see": [
+      "表示要素",
+    ],
+    "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 3`] = `
+{
+  "お子様登録": {
+    "actions": [
+      {
+        "direction": "家族招待説明",
+        "edge": "",
+        "text": [
+          "完了",
+        ],
+      },
+      {
+        "direction": "お子様登録追加",
+        "edge": "",
+        "text": [
+          "お子様を登録するをタップ",
+        ],
+      },
+    ],
+    "id": 4,
+    "lines": 28,
+    "name": "お子様登録",
+    "rank": 0,
+    "see": [
+      "+ link:お子様を登録する",
+      "+ button: 完了",
+    ],
+    "state": "endaction",
+  },
+  "お子様登録追加": {
+    "actions": [
+      {
+        "direction": "お子様登録",
+        "edge": "",
+        "text": [
+          "入力して完了",
+        ],
+      },
+    ],
+    "id": 5,
+    "lines": 37,
+    "name": "お子様登録追加",
+    "rank": 0,
+    "see": [
+      "+ input:お子様のお名前入力",
+      "+ input:性別入力",
+      "+ input:お誕生日入力",
+      "+ button:完了",
+    ],
+    "state": "endaction",
+  },
+  "アルバム作成": {
+    "actions": [
+      {
+        "direction": "お子様登録",
+        "edge": "",
+        "text": [
+          "入力して次へ",
+        ],
+      },
+    ],
+    "id": 3,
+    "lines": 21,
+    "name": "アルバム作成",
+    "rank": 0,
+    "see": [
+      "+ input:あなたのお名前入力欄",
+      "+ input:子供との関係入力欄",
+    ],
+    "state": "endaction",
+  },
+  "アルバム画面": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "画像をタップ",
+        ],
+      },
+    ],
+    "id": 13,
+    "lines": 122,
+    "name": "アルバム画面",
+    "rank": 0,
+    "see": [
+      "投稿済み画像一覧",
+    ],
+    "state": "endaction",
+  },
+  "パスワード再設定": {
+    "actions": [
+      {
+        "direction": "メールを送信しましたダイアログ",
+        "edge": null,
+        "text": [
+          "メールアドレスを入力",
+        ],
+      },
+    ],
+    "id": 7,
+    "lines": 57,
+    "name": "パスワード再設定",
+    "rank": 0,
+    "see": [
+      "メールアドレス入力欄",
+    ],
+    "state": "action",
+  },
+  "メールを送信しましたダイアログ": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 8,
+    "lines": 62,
+    "name": "メールを送信しましたダイアログ",
+    "rank": 0,
+    "see": [
+      "メールを送信しました。",
+    ],
+    "state": "see",
+  },
+  "ログイン": {
+    "actions": [
+      {
+        "direction": "ログイン後",
+        "edge": "",
+        "text": [
+          "メアドパスワードを入力",
+        ],
+      },
+      {
+        "direction": "パスワード再設定",
+        "edge": "",
+        "text": [
+          "パスワードわすれをタップ",
+        ],
+      },
+    ],
+    "id": 6,
+    "lines": 47,
+    "name": "ログイン",
+    "rank": 0,
+    "see": [
+      "メールアドレス・パスワード",
+      "忘れてしまったらこちら",
+    ],
+    "state": "endaction",
+  },
+  "一秒動画": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 17,
+    "lines": 145,
+    "name": "一秒動画",
+    "rank": 0,
+    "see": [],
+    "state": "see",
+  },
+  "公開範囲選択": {
+    "actions": [
+      {
+        "direction": "選択画面",
+        "edge": null,
+        "text": [
+          "どちらを選択",
+        ],
+      },
+    ],
+    "id": 15,
+    "lines": 133,
+    "name": "公開範囲選択",
+    "rank": 0,
+    "see": [
+      "家族みんなに公開",
+      "夫婦のみ",
+    ],
+    "state": "action",
+  },
+  "写真追加": {
+    "actions": [
+      {
+        "direction": "公開範囲選択",
+        "edge": null,
+        "text": [
+          "画像を選択する",
+        ],
+      },
+    ],
+    "id": 14,
+    "lines": 128,
+    "name": "写真追加",
+    "rank": 0,
+    "see": [
+      "画像選択画面",
+    ],
+    "state": "action",
+  },
+  "初期画面": {
+    "actions": [
+      {
+        "direction": "招待",
+        "edge": "",
+        "text": [
+          "招待ボタンを押す",
+        ],
+      },
+      {
+        "direction": "アルバム作成",
+        "edge": "",
+        "text": [
+          "アルバム作成ボタンを押す",
+        ],
+      },
+      {
+        "direction": "ログイン",
+        "edge": "",
+        "text": [
+          "ご利用中の方はこちら",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "初期画面",
+    "rank": 0,
+    "see": [
+      "タイトル画像",
+      "+ button:招待されている方",
+      "+ button:新しくアルバムを作成",
+      "+ link:利用中の方はこちらリンク",
+    ],
+    "state": "endaction",
+  },
+  "家族招待": {
+    "actions": [
+      {
+        "direction": "招待手段",
+        "edge": "",
+        "text": [
+          "アイコンをタップ",
+        ],
+      },
+      {
+        "direction": "家族設定",
+        "edge": "",
+        "text": [
+          "キャンセル",
+        ],
+      },
+    ],
+    "id": 10,
+    "lines": 71,
+    "name": "家族招待",
+    "rank": 0,
+    "see": [
+      "自分以外の家族構成要因一覧",
+      "+ link:ママ",
+      "+ link:おじいちゃん",
+      "+ link:おばあちゃん",
+      "+ link:親族ほか",
+      "+ button:キャンセル",
+    ],
+    "state": "endaction",
+  },
+  "家族招待説明": {
+    "actions": [
+      {
+        "direction": "家族招待",
+        "edge": "",
+        "text": [
+          "次へ",
+        ],
+      },
+    ],
+    "id": 9,
+    "lines": 65,
+    "name": "家族招待説明",
+    "rank": 0,
+    "see": [
+      "家族招待の機能説明",
+    ],
+    "state": "endaction",
+  },
+  "家族設定": {
+    "actions": [
+      {
+        "direction": "アルバム画面",
+        "edge": "",
+        "text": [
+          "アルバムをタップ",
+        ],
+      },
+      {
+        "direction": "近況",
+        "edge": "",
+        "text": [
+          "近況",
+        ],
+      },
+      {
+        "direction": "写真追加",
+        "edge": "",
+        "text": [
+          "写真追加をタップ",
+        ],
+      },
+      {
+        "direction": "一秒動画",
+        "edge": "",
+        "text": [
+          "一秒動画をタップ",
+        ],
+      },
+      {
+        "direction": "家族設定",
+        "edge": "",
+        "text": [
+          "家族設定をタップ",
+        ],
+      },
+    ],
+    "id": 12,
+    "lines": 87,
+    "name": "家族設定",
+    "rank": 2,
+    "see": [
+      "+ ナビ",
+      "++ アルバム",
+      "++ 近況",
+      "++ 追加",
+      "++ 家族設定",
+      "~~",
+      "+ notice:家族招待通知(家族をまだ招待していない時)",
+      "+ アルバム一覧",
+      "+ 家族一覧",
+      "+ お子様一覧",
+      "+ アルバム設定",
+      "+ アカウントの設定",
+      "+ サポート",
+      "++ お知らせ",
+      "++ ヘルプ",
+      "++ お問い合わせ",
+      "+ アプリの設定",
+      "++ 通知機能の設定",
+      "++ アルバムのキャッシュを消す",
+      "+ このアプリについて",
+      "++ 利用規約",
+      "++ プライバシーポリシー",
+    ],
+    "state": "endaction",
+  },
+  "招待": {
+    "actions": [
+      {
+        "direction": "初期画面",
+        "edge": "",
+        "text": [
+          "了解をタップ",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 14,
+    "name": "招待",
+    "rank": 0,
+    "see": [
+      "メッセージを読んでURLを開いてね",
+      "+ button:了解",
+    ],
+    "state": "endaction",
+  },
+  "招待手段": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 11,
+    "lines": 84,
+    "name": "招待手段",
+    "rank": 0,
+    "see": [
+      "ライン/メール",
+    ],
+    "state": "see",
+  },
+  "画像詳細": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "コメント入力して送信",
+        ],
+      },
+      {
+        "direction": "アルバム画面",
+        "edge": "",
+        "text": [
+          "x ボタンをタップ",
+        ],
+      },
+      {
+        "direction": "画像詳細メニュー",
+        "edge": "",
+        "text": [
+          "ハンバーガー",
+        ],
+      },
+    ],
+    "id": 19,
+    "lines": 154,
+    "name": "画像詳細",
+    "rank": 2,
+    "see": [
+      "拡大された画像",
+      "コメント入力欄",
+      "ハンバーガー",
+    ],
+    "state": "endaction",
+  },
+  "近況": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": null,
+        "text": [
+          "画像をタップ",
+          "=> 画像詳細",
+        ],
+      },
+    ],
+    "id": 18,
+    "lines": 148,
+    "name": "近況",
+    "rank": 0,
+    "see": [
+      "最近追加された画像",
+    ],
+    "state": "action",
+  },
+  "選択画面": {
+    "actions": [
+      {
+        "direction": "近況",
+        "edge": "",
+        "text": [
+          "xを押す",
+        ],
+      },
+    ],
+    "id": 16,
+    "lines": 139,
+    "name": "選択画面",
+    "rank": 0,
+    "see": [
+      "xを押したら追加されます表示",
+    ],
+    "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 4`] = `
+{
+  "お子様登録": {
+    "actions": [
+      {
+        "direction": "家族招待説明",
+        "edge": "",
+        "text": [
+          "完了",
+        ],
+      },
+      {
+        "direction": "お子様登録追加",
+        "edge": "",
+        "text": [
+          "お子様を登録するをタップ",
+        ],
+      },
+    ],
+    "id": 4,
+    "lines": 28,
+    "name": "お子様登録",
+    "rank": 0,
+    "see": [
+      "+ link:お子様を登録する",
+      "+ button: 完了",
+    ],
+    "state": "endaction",
+  },
+  "お子様登録追加": {
+    "actions": [
+      {
+        "direction": "お子様登録",
+        "edge": "",
+        "text": [
+          "入力して完了",
+        ],
+      },
+    ],
+    "id": 5,
+    "lines": 37,
+    "name": "お子様登録追加",
+    "rank": 0,
+    "see": [
+      "+ input:お子様のお名前入力",
+      "+ input:性別入力",
+      "+ input:お誕生日入力",
+      "+ button:完了",
+    ],
+    "state": "endaction",
+  },
+  "アルバム作成": {
+    "actions": [
+      {
+        "direction": "お子様登録",
+        "edge": "",
+        "text": [
+          "入力して次へ",
+        ],
+      },
+    ],
+    "id": 3,
+    "lines": 21,
+    "name": "アルバム作成",
+    "rank": 0,
+    "see": [
+      "+ input:あなたのお名前入力欄",
+      "+ input:子供との関係入力欄",
+    ],
+    "state": "endaction",
+  },
+  "アルバム画面": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "画像をタップ",
+        ],
+      },
+    ],
+    "id": 13,
+    "lines": 122,
+    "name": "アルバム画面",
+    "rank": 0,
+    "see": [
+      "投稿済み画像一覧",
+    ],
+    "state": "endaction",
+  },
+  "パスワード再設定": {
+    "actions": [
+      {
+        "direction": "メールを送信しましたダイアログ",
+        "edge": null,
+        "text": [
+          "メールアドレスを入力",
+        ],
+      },
+    ],
+    "id": 7,
+    "lines": 57,
+    "name": "パスワード再設定",
+    "rank": 0,
+    "see": [
+      "メールアドレス入力欄",
+    ],
+    "state": "action",
+  },
+  "メールを送信しましたダイアログ": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 8,
+    "lines": 62,
+    "name": "メールを送信しましたダイアログ",
+    "rank": 0,
+    "see": [
+      "メールを送信しました。",
+    ],
+    "state": "see",
+  },
+  "ログイン": {
+    "actions": [
+      {
+        "direction": "ログイン後",
+        "edge": "",
+        "text": [
+          "メアドパスワードを入力",
+        ],
+      },
+      {
+        "direction": "パスワード再設定",
+        "edge": "",
+        "text": [
+          "パスワードわすれをタップ",
+        ],
+      },
+    ],
+    "id": 6,
+    "lines": 47,
+    "name": "ログイン",
+    "rank": 0,
+    "see": [
+      "メールアドレス・パスワード",
+      "忘れてしまったらこちら",
+    ],
+    "state": "endaction",
+  },
+  "一秒動画": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 17,
+    "lines": 145,
+    "name": "一秒動画",
+    "rank": 0,
+    "see": [],
+    "state": "see",
+  },
+  "公開範囲選択": {
+    "actions": [
+      {
+        "direction": "選択画面",
+        "edge": null,
+        "text": [
+          "どちらを選択",
+        ],
+      },
+    ],
+    "id": 15,
+    "lines": 133,
+    "name": "公開範囲選択",
+    "rank": 0,
+    "see": [
+      "家族みんなに公開",
+      "夫婦のみ",
+    ],
+    "state": "action",
+  },
+  "写真追加": {
+    "actions": [
+      {
+        "direction": "公開範囲選択",
+        "edge": null,
+        "text": [
+          "画像を選択する",
+        ],
+      },
+    ],
+    "id": 14,
+    "lines": 128,
+    "name": "写真追加",
+    "rank": 0,
+    "see": [
+      "画像選択画面",
+    ],
+    "state": "action",
+  },
+  "初期画面": {
+    "actions": [
+      {
+        "direction": "招待",
+        "edge": "",
+        "text": [
+          "招待ボタンを押す",
+        ],
+      },
+      {
+        "direction": "アルバム作成",
+        "edge": "",
+        "text": [
+          "アルバム作成ボタンを押す",
+        ],
+      },
+      {
+        "direction": "ログイン",
+        "edge": "",
+        "text": [
+          "ご利用中の方はこちら",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "初期画面",
+    "rank": 0,
+    "see": [
+      "タイトル画像",
+      "+ button:招待されている方",
+      "+ button:新しくアルバムを作成",
+      "+ link:利用中の方はこちらリンク",
+    ],
+    "state": "endaction",
+  },
+  "家族招待": {
+    "actions": [
+      {
+        "direction": "招待手段",
+        "edge": "",
+        "text": [
+          "アイコンをタップ",
+        ],
+      },
+      {
+        "direction": "家族設定",
+        "edge": "",
+        "text": [
+          "キャンセル",
+        ],
+      },
+    ],
+    "id": 10,
+    "lines": 71,
+    "name": "家族招待",
+    "rank": 0,
+    "see": [
+      "自分以外の家族構成要因一覧",
+      "+ link:ママ",
+      "+ link:おじいちゃん",
+      "+ link:おばあちゃん",
+      "+ link:親族ほか",
+      "+ button:キャンセル",
+    ],
+    "state": "endaction",
+  },
+  "家族招待説明": {
+    "actions": [
+      {
+        "direction": "家族招待",
+        "edge": "",
+        "text": [
+          "次へ",
+        ],
+      },
+    ],
+    "id": 9,
+    "lines": 65,
+    "name": "家族招待説明",
+    "rank": 0,
+    "see": [
+      "家族招待の機能説明",
+    ],
+    "state": "endaction",
+  },
+  "家族設定": {
+    "actions": [
+      {
+        "direction": "アルバム画面",
+        "edge": "",
+        "text": [
+          "アルバムをタップ",
+        ],
+      },
+      {
+        "direction": "近況",
+        "edge": "",
+        "text": [
+          "近況",
+        ],
+      },
+      {
+        "direction": "写真追加",
+        "edge": "",
+        "text": [
+          "写真追加をタップ",
+        ],
+      },
+      {
+        "direction": "一秒動画",
+        "edge": "",
+        "text": [
+          "一秒動画をタップ",
+        ],
+      },
+      {
+        "direction": "家族設定",
+        "edge": "",
+        "text": [
+          "家族設定をタップ",
+        ],
+      },
+    ],
+    "id": 12,
+    "lines": 87,
+    "name": "家族設定",
+    "rank": 2,
+    "see": [
+      "+ ナビ",
+      "++ アルバム",
+      "++ 近況",
+      "++ 追加",
+      "++ 家族設定",
+      "~~",
+      "+ notice:家族招待通知(家族をまだ招待していない時)",
+      "+ アルバム一覧",
+      "+ 家族一覧",
+      "+ お子様一覧",
+      "+ アルバム設定",
+      "+ アカウントの設定",
+      "+ サポート",
+      "++ お知らせ",
+      "++ ヘルプ",
+      "++ お問い合わせ",
+      "+ アプリの設定",
+      "++ 通知機能の設定",
+      "++ アルバムのキャッシュを消す",
+      "+ このアプリについて",
+      "++ 利用規約",
+      "++ プライバシーポリシー",
+    ],
+    "state": "endaction",
+  },
+  "招待": {
+    "actions": [
+      {
+        "direction": "初期画面",
+        "edge": "",
+        "text": [
+          "了解をタップ",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 14,
+    "name": "招待",
+    "rank": 0,
+    "see": [
+      "メッセージを読んでURLを開いてね",
+      "+ button:了解",
+    ],
+    "state": "endaction",
+  },
+  "招待手段": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 11,
+    "lines": 84,
+    "name": "招待手段",
+    "rank": 0,
+    "see": [
+      "ライン/メール",
+    ],
+    "state": "see",
+  },
+  "画像詳細": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "コメント入力して送信",
+        ],
+      },
+      {
+        "direction": "アルバム画面",
+        "edge": "",
+        "text": [
+          "x ボタンをタップ",
+        ],
+      },
+      {
+        "direction": "test",
+        "edge": "",
+        "text": [
+          "ハンバーガー",
+        ],
+      },
+    ],
+    "id": 19,
+    "lines": 154,
+    "name": "画像詳細",
+    "rank": 2,
+    "see": [
+      "拡大された画像",
+      "コメント入力欄",
+      "ハンバーガー",
+    ],
+    "state": "endaction",
+  },
+  "画像詳細メニュー": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "キャンセル",
+        ],
+      },
+    ],
+    "id": 20,
+    "lines": 166,
+    "name": "画像詳細メニュー",
+    "rank": 0,
+    "see": [
+      "+ アクション",
+      "++ 公開範囲を変更",
+      "++ カメラロールに保存",
+      "++ 撮影日を変更",
+      "++ 写真動画を削除",
+      "++ コメントを削除",
+      "+ キャンセル",
+    ],
+    "state": "endaction",
+  },
+  "近況": {
+    "actions": [
+      {
+        "direction": "画像詳細",
+        "edge": "",
+        "text": [
+          "画像をタップ",
+        ],
+      },
+    ],
+    "id": 18,
+    "lines": 148,
+    "name": "近況",
+    "rank": 0,
+    "see": [
+      "最近追加された画像",
+    ],
+    "state": "endaction",
+  },
+  "選択画面": {
+    "actions": [
+      {
+        "direction": "近況",
+        "edge": "",
+        "text": [
+          "xを押す",
+        ],
+      },
+    ],
+    "id": 16,
+    "lines": 139,
+    "name": "選択画面",
+    "rank": 0,
+    "see": [
+      "xを押したら追加されます表示",
+    ],
+    "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 5`] = `
+{
   "その結果１": {
     "actions": [
       {
@@ -80,6 +1301,208 @@ exports[`parser 1`] = `
       "ユーザーが見るもの",
     ],
     "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 6`] = `
+{
+  "その結果１": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 3,
+    "lines": 14,
+    "name": "その結果１",
+    "rank": 0,
+    "see": [
+      "結果",
+    ],
+    "state": "see",
+  },
+  "その結果２": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 4,
+    "lines": 17,
+    "name": "その結果２",
+    "rank": 0,
+    "see": [
+      "結果",
+    ],
+    "state": "see",
+  },
+  "最初に": {
+    "actions": [
+      {
+        "direction": "次に",
+        "edge": null,
+        "text": [
+          "ユーザーがする行動を書きます。",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "最初に",
+    "rank": 0,
+    "see": [
+      "ユーザーが見るものを書きます。",
+    ],
+    "state": "action",
+  },
+  "次に": {
+    "actions": [
+      {
+        "direction": "その結果１",
+        "edge": "",
+        "text": [
+          "ユーザーがすること１",
+        ],
+      },
+      {
+        "direction": "その結果２",
+        "edge": "",
+        "text": [
+          "ユーザーがすること２",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 6,
+    "name": "次に",
+    "rank": 0,
+    "see": [
+      "ユーザーが見るもの",
+    ],
+    "state": "endaction",
+  },
+}
+`;
+
+exports[`parser 7`] = `
+{
+  "a": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "a",
+    "rank": 0,
+    "see": [
+      "ax1",
+    ],
+    "state": "see",
+  },
+  "aaaaa": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 2,
+    "lines": 4,
+    "name": "aaaaa",
+    "rank": 0,
+    "see": [
+      "ax5",
+    ],
+    "state": "see",
+  },
+  "aaaaaaaaaa": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 3,
+    "lines": 7,
+    "name": "aaaaaaaaaa",
+    "rank": 0,
+    "see": [
+      "ax10",
+    ],
+    "state": "see",
+  },
+  "aaaaaaaaaaaaaaa": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 4,
+    "lines": 10,
+    "name": "aaaaaaaaaaaaaaa",
+    "rank": 0,
+    "see": [
+      "ax15",
+    ],
+    "state": "see",
+  },
+  "あ": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 5,
+    "lines": 13,
+    "name": "あ",
+    "rank": 0,
+    "see": [],
+    "state": "see",
+  },
+  "あああああ": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 6,
+    "lines": 15,
+    "name": "あああああ",
+    "rank": 0,
+    "see": [],
+    "state": "see",
+  },
+  "ああああああああああ": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 7,
+    "lines": 17,
+    "name": "ああああああああああ",
+    "rank": 0,
+    "see": [],
+    "state": "see",
   },
 }
 `;
