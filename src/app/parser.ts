@@ -184,7 +184,7 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
 
       if (state === 'action') {
         actions = tree[currentSection].actions
-        actions[actions.length - 1].text.push(node.actionText ?? '')
+        actions[actions.length - 1].text.push(node.text ?? '')
         lastAction = actions[actions.length - 1]
       }
     }

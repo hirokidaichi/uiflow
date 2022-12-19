@@ -42,7 +42,7 @@ exports[`parser 1`] = `
         "direction": "次に",
         "edge": null,
         "text": [
-          "",
+          "ユーザーがする行動を書きます。",
         ],
       },
     ],
@@ -61,14 +61,14 @@ exports[`parser 1`] = `
         "direction": "その結果１",
         "edge": "遷移アクション名",
         "text": [
-          "",
+          "ユーザーがすること１",
         ],
       },
       {
         "direction": "その結果２",
         "edge": "API名など",
         "text": [
-          "",
+          "ユーザーがすること２",
         ],
       },
     ],
