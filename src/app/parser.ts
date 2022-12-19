@@ -144,8 +144,8 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
         errorMessage('Undefined section' + '\tL:', node.num)
       }
       actions = tree[currentSection].actions
-      actions[actions.length - 1].direction = node.title ?? ''
-      actions[actions.length - 1].edge = node.actionText ?? ''
+      actions[actions.length - 1].direction = node.actionText ?? ''
+      actions[actions.length - 1].edge = node.api ?? ''
 
       tree[currentSection].state = 'endaction'
     }

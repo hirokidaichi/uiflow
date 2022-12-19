@@ -58,15 +58,15 @@ exports[`parser 1`] = `
   "次に": {
     "actions": [
       {
-        "direction": "",
-        "edge": "その結果１",
+        "direction": "その結果１",
+        "edge": "遷移アクション名",
         "text": [
           "",
         ],
       },
       {
-        "direction": "",
-        "edge": "その結果２",
+        "direction": "その結果２",
+        "edge": "API名など",
         "text": [
           "",
         ],
