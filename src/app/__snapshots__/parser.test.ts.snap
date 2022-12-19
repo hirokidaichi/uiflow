@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parser 1`] = `
+{
+  "その結果１": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 3,
+    "lines": 14,
+    "name": "その結果１",
+    "rank": 0,
+    "see": [
+      "結果",
+    ],
+    "state": "see",
+  },
+  "その結果２": {
+    "actions": [
+      {
+        "direction": null,
+        "edge": null,
+        "text": [],
+      },
+    ],
+    "id": 4,
+    "lines": 17,
+    "name": "その結果２",
+    "rank": 0,
+    "see": [
+      "結果",
+    ],
+    "state": "see",
+  },
+  "最初に": {
+    "actions": [
+      {
+        "direction": "次に",
+        "edge": null,
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 1,
+    "lines": 1,
+    "name": "最初に",
+    "rank": 0,
+    "see": [
+      "ユーザーが見るものを書きます。",
+    ],
+    "state": "action",
+  },
+  "次に": {
+    "actions": [
+      {
+        "direction": "",
+        "edge": "その結果１",
+        "text": [
+          "",
+        ],
+      },
+      {
+        "direction": "",
+        "edge": "その結果２",
+        "text": [
+          "",
+        ],
+      },
+    ],
+    "id": 2,
+    "lines": 6,
+    "name": "次に",
+    "rank": 0,
+    "see": [
+      "ユーザーが見るもの",
+    ],
+    "state": "endaction",
+  },
+}
+`;
