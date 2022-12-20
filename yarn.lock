@@ -2671,10 +2671,10 @@ onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-option-parser@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/option-parser/-/option-parser-0.1.3.tgz#cfe33c0fe95f805d9c0ac79e91224bbfa26a9c17"
-  integrity sha512-e0cuc/LIcKcx6ILYfwrrblH6R12Q/XFqvuXaogmRQjcVptxFVfYWGAFUZP8KDkLetdL9eiVneFm8VCg1xH12Fg==
+option-parser@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/option-parser/-/option-parser-1.0.2.tgz#f2b872f5dfb0bb84f082ad1103e978a1152f70dc"
+  integrity sha512-Q56FmRi6TZX+S9jAl9f0Tnrk7W8faAZULf6Y0IgJR6Cy7/MxhzvBFoyL1Sz2DD7WbOY2Fxtkz2S/3kzlbn/VsQ==
 
 optionator@^0.9.1:
   version "0.9.1"

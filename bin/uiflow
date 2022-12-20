@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var fs = require("fs");
-var uiflow = require("../src");
+var uiflow = require("../src/app");
 var OptionParser = require("option-parser");
 
 var op = new OptionParser();

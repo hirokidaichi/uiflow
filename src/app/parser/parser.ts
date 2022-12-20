@@ -11,7 +11,6 @@ interface LineParseResult {
   rank?: number
   actionText?: string
   api?: string
-
   title?: string
   text?: string
 }

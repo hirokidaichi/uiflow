@@ -9,20 +9,20 @@ const graph = {
   margin: 0.2,
   ranksep: 0.5,
   nodesep: 0.4,
-}
+} as const satisfies Props
 
 const node = {
   style: 'solid',
   fontsize: 11,
   margin: '0.1,0.1',
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
-}
+} as const satisfies Props
 
 const edge = {
   fontsize: 9,
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
   color: '#777777',
-}
+} as const satisfies Props
 
 type PropsValue = string | number
 type Props = Record<string, PropsValue>
