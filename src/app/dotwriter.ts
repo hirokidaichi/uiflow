@@ -10,31 +10,22 @@ const graph = {
   ranksep: 0.5,
   nodesep: 0.4,
 }
+
 const node = {
   style: 'solid',
   fontsize: 11,
   margin: '0.1,0.1',
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
 }
+
 const edge = {
   fontsize: 9,
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
   color: '#777777',
 }
-type Props = Record<string, string | number>
 
-type GraphProps = Pick<Props, keyof typeof graph>
-
-type NodeProps = Pick<Props, keyof typeof node>
-
-type EdgeProps = Pick<Props, keyof typeof edge>
-
-interface Dot {
-  graph?: GraphProps
-  node?: NodeProps
-  edge?: EdgeProps
-  compile: typeof compile
-}
+type PropsValue = string | number
+type Props = Record<string, PropsValue>
 
 const tab = (text: string, level: number): string => {
   let t = ''
@@ -45,8 +36,8 @@ const tab = (text: string, level: number): string => {
   return t
 }
 
-const escapeQuote = (text: string): string => {
-  return '"' + (text + '').replace(/"/g, '"') + '"'
+const escapeQuote = (text: string | number): string => {
+  return '"' + `${text}`.replace(/"/g, '"') + '"'
 }
 
 const bs = /\\/g
@@ -95,8 +86,8 @@ const graphGlobal = (): string => {
 const edgeGlobal = (): string => {
   return blanket(1, 'edge', dot.edge)
 }
-const section = (port: string, text: string): string => {
-  return `<${port}> ${text}\\l `
+const section = (port: string, text: string | string[]): string => {
+  return `<${port}> ${text instanceof Array ? text.join() : text}\\l `
 }
 
 const runeWidth = (str: string): number => {
@@ -111,6 +102,7 @@ const runeWidth = (str: string): number => {
 }
 
 type RuneWidth = number
+
 const maxRuneWidth = (elm: Node): RuneWidth => {
   const nameWidth = runeWidth(elm.name)
   const maxSeeWith = Math.max.apply(null, elm.see.map(runeWidth))
@@ -124,11 +116,12 @@ const maxRuneWidth = (elm: Node): RuneWidth => {
 }
 
 type Width = number
+
 const runeToWidth = (runeWidth: RuneWidth): Width => {
   const rw = runeWidth <= 5 ? 5 : runeWidth
   return rw / 13 + 0.2
 }
-const treeToDotDef = (tree: NodeTree) => {
+const treeToDotDef = (tree: NodeTree): string => {
   return Object.keys(tree)
     .map((key) => {
       const elm = tree[key]
@@ -149,7 +142,7 @@ const treeToDotDef = (tree: NodeTree) => {
                 .join('|'),
         ]
           .filter((r) => {
-            return !!r
+            return !(r == null)
           })
           .join('|'),
         width: runeToWidth(runeWidth),
@@ -158,7 +151,7 @@ const treeToDotDef = (tree: NodeTree) => {
     .join('\n')
 }
 
-const arrow = (from: string, to: string, label: string) => {
+const arrow = (from: string, to: string, label: string): string => {
   if (label !== '') {
     return tab(from + ' -> ' + to, 1)
   }
@@ -185,20 +178,22 @@ const treeToDotArrow = (tree: NodeTree): string => {
             return arrow(
               nameOf(elm, `action${i}`),
               escapeQuote(e.direction),
-              e.edge
+              e.edge ?? ''
             )
           }
           return arrow(
             nameOf(elm, `action${i}`),
             nameOf(tree[e.direction]),
-            e.edge
+            e.edge ?? ''
           )
         })
         .join('\n')
     })
     .join('\n')
 }
+
 type RankList = string[]
+
 type RankMap = Record<string, RankList>
 
 const treeToDotRank = (tree: NodeTree): string => {
@@ -222,7 +217,7 @@ const treeToDotRank = (tree: NodeTree): string => {
   return result
 }
 
-export function compile(tree: NodeTree): string {
+const compile = (tree: NodeTree): string => {
   return [
     'digraph D {',
     graphGlobal(),
@@ -234,3 +229,10 @@ export function compile(tree: NodeTree): string {
     '}',
   ].join('\n')
 }
+
+const dot = (module.exports = {
+  compile,
+  graph,
+  node,
+  edge,
+})
