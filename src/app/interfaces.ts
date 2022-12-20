@@ -23,3 +23,5 @@ export interface Node {
   tag: Tag
   actions: Action[]
 }
+
+export type NodeTree = Record<string, Node>
