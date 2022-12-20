@@ -100,7 +100,7 @@ const section = (port: string, text: string): string => {
 }
 
 const runeWidth = (str: string): number => {
-  if (!str) {
+  if (str !== '') {
     return 0
   }
   let count = 0
@@ -143,12 +143,12 @@ const treeToDotDef = (tree: NodeTree) => {
           noActions
             ? null
             : elm.actions
-                .map(function (action, index) {
+                .map((action, index) => {
                   return section(`action${index}`, action.text.map(escapeText))
                 })
                 .join('|'),
         ]
-          .filter(function (r) {
+          .filter((r) => {
             return !!r
           })
           .join('|'),
