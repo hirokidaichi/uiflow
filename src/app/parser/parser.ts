@@ -192,6 +192,6 @@ const parseTags = (listOfNode: LineParseResult[], fileName: string): Tree => {
   return tree
 }
 
-export function parse(text: string, fileName: string): Tree {
+export const parse = (text: string, fileName: string): Tree => {
   return parseTags(lexer(text), fileName)
 }

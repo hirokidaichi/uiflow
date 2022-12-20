@@ -1,6 +1,6 @@
 import { Node, NodeTree } from '../interfaces'
 
-const graph = {
+export const graph = {
   charset: 'UTF-8',
   labelloc: 't',
   labeljust: 'r',
@@ -11,14 +11,14 @@ const graph = {
   nodesep: 0.4,
 } as const satisfies Props
 
-const node = {
+export const node = {
   style: 'solid',
   fontsize: 11,
   margin: '0.1,0.1',
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
 } as const satisfies Props
 
-const edge = {
+export const edge = {
   fontsize: 9,
   fontname: 'Osaka-Mono,ＭＳ ゴシック',
   color: '#777777',
@@ -78,13 +78,13 @@ const blanket = (tabLevel: number, name: string, values: Props): string => {
 }
 
 const nodeGlobal = (): string => {
-  return blanket(1, 'node', dot.node)
+  return blanket(1, 'node', node)
 }
 const graphGlobal = (): string => {
-  return blanket(1, 'graph', dot.graph)
+  return blanket(1, 'graph', graph)
 }
 const edgeGlobal = (): string => {
-  return blanket(1, 'edge', dot.edge)
+  return blanket(1, 'edge', edge)
 }
 const section = (port: string, text: string | string[]): string => {
   return `<${port}> ${text instanceof Array ? text.join() : text}\\l `
@@ -217,7 +217,7 @@ const treeToDotRank = (tree: NodeTree): string => {
   return result
 }
 
-const compile = (tree: NodeTree): string => {
+export const compile = (tree: NodeTree): string => {
   return [
     'digraph D {',
     graphGlobal(),
@@ -229,10 +229,3 @@ const compile = (tree: NodeTree): string => {
     '}',
   ].join('\n')
 }
-
-const dot = (module.exports = {
-  compile,
-  graph,
-  node,
-  edge,
-})
