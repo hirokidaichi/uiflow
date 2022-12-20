@@ -1,4 +1,4 @@
-import { Action, Tag } from './interfaces'
+import { Action, Tag } from '../interfaces'
 
 const SECTION = /\[([^#\]]*)(#+)?]/
 const END_OF_SEES = /^-+$/

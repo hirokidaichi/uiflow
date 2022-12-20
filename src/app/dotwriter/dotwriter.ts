@@ -1,4 +1,4 @@
-import { Node, NodeTree } from './interfaces'
+import { Node, NodeTree } from '../interfaces'
 
 const graph = {
   charset: 'UTF-8',
