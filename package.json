@@ -25,10 +25,10 @@
   "author": "hirokidaichi",
   "license": "MIT",
   "dependencies": {
-    "option-parser": "^1.0.2",
+    "minimist": "^1.2.7",
     "spawn-stream": "^1.0.2",
     "string-to-stream": "^1.0.1",
-    "through2": "^2.0.1"
+    "through2": "^4.0.2"
   },
   "bugs": {
     "url": "https://github.com/hirokidaichi/uiflow/issues"
@@ -36,6 +36,8 @@
   "homepage": "https://github.com/hirokidaichi/uiflow",
   "devDependencies": {
     "@types/jest": "^29.2.4",
+    "@types/minimist": "^1.2.2",
+    "@types/through2": "^2.0.38",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
