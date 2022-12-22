@@ -2,11 +2,11 @@ import fs from 'fs'
 import uiflow from '../app'
 import { Format } from '../app/interfaces'
 
-let INPUT_FILE: string
-let OUTPUT_FILE: string
+let INPUT_FILE: string | undefined
+let OUTPUT_FILE: string | NodeJS.WritableStream | undefined
 const FORMAT: Format = 'dot'
 
-const error = (error: Error): void => {
+const error = (error: String): void => {
   console.error(error)
   process.exit(-1)
 }
@@ -32,12 +32,11 @@ op.addOption('f', 'format', 'Set output format')
 op.parse()
 if (INPUT_FILE === undefined)
   error("Should be set inputFiles like 'uiflow -i target.txt'")
-
-var output = OUTPUT_FILE
+OUTPUT_FILE !== undefined
   ? fs.createWriteStream(OUTPUT_FILE, {
       flags: 'w',
       defaultEncoding: 'utf8',
-      fd: null,
+      fd: undefined,
       autoClose: true,
     })
   : process.stdout
