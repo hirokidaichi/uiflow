@@ -1,15 +1,12 @@
 import fs from 'fs'
 import uiflow from '../app'
-import OptionParser from 'option-parser'
+import { Format } from '../app/interfaces'
 
-var op = new OptionParser()
-var ENABLE_WATCH = false
-var INPUT_FILE
-var BEFORE_FILE
-var OUTPUT_FILE
-var FORMAT = 'dot'
+let INPUT_FILE: string
+let OUTPUT_FILE: string
+const FORMAT: Format = 'dot'
 
-var error = function (error) {
+const error = (error: Error): void => {
   console.error(error)
   process.exit(-1)
 }
@@ -33,7 +30,8 @@ op.addOption('f', 'format', 'Set output format')
   })
 
 op.parse()
-if (!INPUT_FILE) error("Should be set inputFiles like 'uiflow -i target.txt'")
+if (INPUT_FILE === undefined)
+  error("Should be set inputFiles like 'uiflow -i target.txt'")
 
 var output = OUTPUT_FILE
   ? fs.createWriteStream(OUTPUT_FILE, {

@@ -4,6 +4,7 @@ import parser from '../app/parser'
 import dot from '../app/dotwriter'
 import stringStream from 'string-to-stream'
 import through2 from 'through2'
+import { Format } from './interfaces'
 
 /*
  plugin : function(fileName,format) -> stream
@@ -72,7 +73,7 @@ const jsonize: Pipe = () =>
     this.push(output)
     callback()
   })
-type Format = 'dot' | 'meta' | 'json' | 'png' | 'svg'
+
 type Pipeline = Record<Format, Pipe[]>
 const FORMAT_TO_PIPELINE = {
   dot: [parse, compile],
@@ -86,7 +87,7 @@ type ErrorHandler = (e: Error) => void
 const build = (
   fileName: string,
   format: Format,
-  handleError: ErrorHandler
+  handleError?: ErrorHandler
 ): stream.Transform => {
   const stream = fs.createReadStream(fileName).pipe(slurp(fileName))
   return composeStream(stream, format, handleError)
@@ -95,7 +96,7 @@ const build = (
 const composeStream = (
   stream: stream.Transform,
   format: Format,
-  handleError: ErrorHandler
+  handleError?: ErrorHandler
 ): stream.Transform => {
   const pipes = FORMAT_TO_PIPELINE[format]
   if (pipes === null) {
@@ -103,7 +104,7 @@ const composeStream = (
   }
   return pipes.reduce((acc, n) => {
     const next = n()
-    if (handleError !== null) next.on('error', handleError)
+    if (handleError !== undefined) next.on('error', handleError)
     return acc.pipe(next)
   }, stream)
 }

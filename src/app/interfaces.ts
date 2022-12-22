@@ -25,3 +25,5 @@ export interface Node {
 }
 
 export type NodeTree = Record<string, Node>
+
+export type Format = 'dot' | 'meta' | 'json' | 'png' | 'svg'
