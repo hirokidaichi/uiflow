@@ -1,5 +1,5 @@
 {
-  "name": "@kexi/uiflow",
+  "name": "uiflow",
   "version": "1.1.8",
   "description": "uiflow - the simplest way to write down your ui-flow diagram like markdown",
   "publishConfig": {
@@ -16,7 +16,7 @@
     "build:esm": "tsc -p tsconfig.esm.json"
   },
   "bin": {
-    "uiflow": "./bin/uiflow"
+    "uiflow": "dist/esm/bin/uiflow.js"
   },
   "repository": {
     "type": "git",
