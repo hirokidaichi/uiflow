@@ -13,10 +13,12 @@
     "lint": "npx eslint",
     "build": "yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json"
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "publish": "npm publish",
+    "clean": "rm -rf ./dist"
   },
   "bin": {
-    "uiflow": "dist/esm/bin/uiflow.js"
+    "uiflow": "./dist/esm/bin/uiflow.js"
   },
   "repository": {
     "type": "git",
@@ -50,6 +52,6 @@
     "prettier": "^2.8.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "*"
+    "typescript": "^4.9.4"
   }
 }
