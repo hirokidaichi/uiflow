@@ -14,7 +14,7 @@
     "build": "yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "publish": "npm publish",
+    "publish": "yarn clean && yarn build && npm publish",
     "clean": "rm -rf ./dist"
   },
   "bin": {
